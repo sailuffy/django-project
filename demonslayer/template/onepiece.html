@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %} About {% endblock title %}
+{% block body %}
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner" container="1400x500 px";>
+    <div class="carousel-item active">
+      <img src="/static/11.jpg" class="d-block w-100" alt="..." width="100" height="600">
+
+    </div>
+    <div class="carousel-item">
+      <img src="/static/law.jpg" class="d-block w-100" alt="..." width="1200" height="600">
+    </div>
+    <div class="carousel-item">
+      <img src="/static/9.jpg" class="d-block w-100" alt="..."  height="600">
+
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<h1 style="font-family:'Georgia'"> onepiece this is the best anime  you have to  watch.it conatins different arcs excellent stories and characters. Please click the link given below!!!   </h1>
+<p style="font-size: 160%"> <a href="https://www2.gogoanime.sh/category/one-piece"> Onepiece</a> </p>
+or
+<p style="font-size: 160%"> <a href=" https://123animes.mobi/anime/one-piece/episode
+"> Onepiece</a> </p>
+
+     <div>
+     {% for x in video %}
+     <h2 style="color:orange";>{{x.caption}}</h2>
+     <video
+
+     id="my-video"
+
+   class="video-js"
+
+   controls
+
+   preload="auto"
+
+   width="900"
+
+   height="400"
+
+   poster="{{x.thumb.url}}"
+
+   data-setup="{}"
+
+ >
+
+   <source src="{{x.video.url}}" type="video/mp4" /><br>
+   <br>
+
+
+
+
+ </video>
+
+
+     {% endfor %}
+     </div>
+     <br>
+     <br>
+
+{% endblock body %}
